@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eureka-server1
+server:
+  port: 8761                    # 指定该Eureka实例的端口
+eureka:
+  instance:
+    hostname: peer1
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://peer2:8762/eureka/
+
