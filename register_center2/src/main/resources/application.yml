@@ -1,6 +1,9 @@
 spring:
   application:
     name: eureka-server2
+  output:
+      ansi:
+        enabled: always
 server:
   port: 8762                   # 指定该Eureka实例的端口
 eureka:
