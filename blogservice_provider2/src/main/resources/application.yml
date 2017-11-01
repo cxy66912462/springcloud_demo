@@ -1,0 +1,20 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: blogservice_provider2
+  output:
+    ansi:
+      enabled: always
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+  instance:
+    prefer-ip-address: true
+logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
