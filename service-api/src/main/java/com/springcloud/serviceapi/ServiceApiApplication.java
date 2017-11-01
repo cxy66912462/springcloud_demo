@@ -1,6 +1,6 @@
 package com.springcloud.serviceapi;
 
-import com.springcloud.common.User;
+import com.springcloud.common.entity.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
