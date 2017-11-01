@@ -1,6 +1,9 @@
 spring:
   application:
     name: eureka-server1
+  output:
+    ansi:
+      enabled: always
 server:
   port: 8761                    # 指定该Eureka实例的端口
 eureka:
@@ -12,4 +15,6 @@ eureka:
 #    fetchRegistry: false
     serviceUrl:
       defaultZone: http://peer2:8762/eureka/
+#      defaultZone: http://localhost:8761/eureka/
+
 
