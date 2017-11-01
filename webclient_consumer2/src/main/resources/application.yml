@@ -1,0 +1,14 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: webclient_consumer2
+  output:
+    ansi:
+      enabled: always
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8762/eureka/
+  instance:
+    prefer-ip-address: true
