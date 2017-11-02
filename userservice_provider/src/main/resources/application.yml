@@ -2,7 +2,7 @@ server:
   port: 8003
 spring:
   application:
-    name: userservice_provider
+    name: userservice-provider
   output:
     ansi:
       enabled: always

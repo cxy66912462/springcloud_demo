@@ -34,7 +34,6 @@ public class UserController {
         user.setUsername("大吉大利");
         user.setPassword("qwe");
         user.setSalt("asd");
-
         return user;
     }
 
