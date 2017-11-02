@@ -11,6 +11,20 @@
     <modules>
         <module>common</module>
         <module>service-api</module>
+        <module>register_center</module>
+        <module>register_center2</module>
+        <module>userservice_provider</module>
+        <module>userservice_provider2</module>
+        <module>blogservice_provider</module>
+        <module>blogservice_provider2</module>
+        <module>webclient_consumer</module>
+        <module>webclient_consumer2</module>
+        <module>config_server</module>
+        <module>config_server2</module>
+        <module>rabbitmq_bus</module>
+        <module>rabbitmq_bus2</module>
+        <module>zuul_gateway</module>
+        <module>zuul_gateway2</module>
     </modules>
 
 </project>
