@@ -2,7 +2,7 @@ server:
   port: 8002
 spring:
   application:
-    name: blogservice_provider2
+    name: blogservice-provider2
   output:
     ansi:
       enabled: always
