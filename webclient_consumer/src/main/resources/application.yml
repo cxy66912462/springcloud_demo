@@ -12,3 +12,6 @@ eureka:
       defaultZone: http://peer1:8761/eureka/
   instance:
     prefer-ip-address: true
+userservice-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
