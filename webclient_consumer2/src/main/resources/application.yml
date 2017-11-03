@@ -2,7 +2,7 @@ server:
   port: 9002
 spring:
   application:
-    name: webclient_consumer2
+    name: webclient-consumer2
   output:
     ansi:
       enabled: always
