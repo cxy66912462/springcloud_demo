@@ -3,6 +3,7 @@ package com.springcloud.webclient_consumer.controller;
 
 import com.springcloud.common.entity.User;
 import com.springcloud.webclient_consumer.api.UserFeignClient;
+import com.springcloud.webclient_consumer.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,16 +33,31 @@ public class UserController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
+    @Autowired
+    private UserService userService;
+//    @Autowired
+//    private UserFeignClient userFeignClient;
+
+    /**
+     * 重构后
+     */
+    @GetMapping("/user/{id}")
+    public User findById(@PathVariable Integer id) {
+        return userService.getUserById(id);
+//        return userFeignClient.getUserById(id);
+    }
+
+
     /**
      * feign声明式服务调用,依赖ribbon
      */
-    @Autowired
-    private UserFeignClient client;
-
-    @GetMapping("/user/{id}")
-    public User findById(@PathVariable Integer id) {
-        return this.client.getUserById(id);
-    }
+//    @Autowired
+//    private UserFeignClient client;
+//
+//    @GetMapping("/user/{id}")
+//    public User findById(@PathVariable Integer id) {
+//        return this.client.getUserById(id);
+//    }
 
 
 
