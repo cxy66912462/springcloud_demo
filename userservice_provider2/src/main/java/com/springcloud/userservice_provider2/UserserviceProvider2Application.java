@@ -10,10 +10,10 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 public class UserserviceProvider2Application {
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
+//	@Bean
+//	public RestTemplate restTemplate() {
+//		return new RestTemplate();
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(UserserviceProvider2Application.class, args);
