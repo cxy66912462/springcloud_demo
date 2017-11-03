@@ -1,6 +1,7 @@
 package com.springcloud.userservice_provider.controller;
 
 import com.springcloud.common.entity.User;
+import com.springcloud.serviceapi.api.UserServiceApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-public class UserController {
+public class UserController implements UserServiceApi{
 
-    @Autowired
-    private RestTemplate restTemplate;
 
     private Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -24,10 +23,14 @@ public class UserController {
     @Value("${spring.application.name}")
     private String applicationName;
 
-    @GetMapping("/user/{id}")
-    public User getUser(@PathVariable Integer id){
-        logger.info("查询用户信息,id = {} ,service = {}",id,applicationName+":"+port);
 
+
+    /**
+     * 重构后,实现service-api
+     */
+    @Override
+    public User getUserById(Integer id) {
+        logger.info("查询用户信息,id = {} ,service = {}",id,applicationName+":"+port);
         User user = new User();
         user.setId(1);
         user.setAge(25);
@@ -36,5 +39,25 @@ public class UserController {
         user.setSalt("asd");
         return user;
     }
+
+
+    /**
+     * 重构前
+     */
+//    @Autowired
+//    private RestTemplate restTemplate;
+
+//    @GetMapping("/user/{id}")
+//    public User getUser(@PathVariable Integer id){
+//        logger.info("查询用户信息,id = {} ,service = {}",id,applicationName+":"+port);
+//
+//        User user = new User();
+//        user.setId(1);
+//        user.setAge(25);
+//        user.setUsername("大吉大利");
+//        user.setPassword("qwe");
+//        user.setSalt("asd");
+//        return user;
+//    }
 
 }
